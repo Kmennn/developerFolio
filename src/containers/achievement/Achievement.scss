@@ -1,0 +1,43 @@
+@import "../../_globalColor";
+
+.achievement-heading {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 24px;
+  }
+}
+
+.achievement-subtitle {
+  text-transform: uppercase;
+  margin: 0px;
+  margin-bottom: 50px;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+.subTitle {
+  color: $subTitle;
+}

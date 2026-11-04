@@ -1,0 +1,155 @@
+@import "../../_globalColor";
+
+.main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 4rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: auto;
+    padding: 10px;
+    margin-top: 2rem;
+  }
+}
+
+.greet-main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 2rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: auto;
+    padding: 10px;
+    margin-top: 1rem;
+  }
+}
+
+.greeting-main {
+  display: flex;
+
+  @media (max-width: $tablet-breakpoint) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.subTitle {
+  color: $subTitle !important;
+}
+
+.greeting-main > * {
+  flex: 1;
+  margin-bottom: 30px;
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-bottom: 20px;
+    width: 100%; // Ensure it takes full width when stacked
+  }
+}
+
+.empty-div {
+  margin-bottom: 40px;
+}
+
+.button-greeting-div {
+  display: flex;
+  margin-top: 40px;
+
+  @media (max-width: $tablet-breakpoint) {
+    justify-content: center; // Center buttons on smaller screens
+    flex-wrap: wrap; // Allow buttons to wrap if needed
+    margin-top: 20px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column; // Stack buttons vertically on very small screens
+    align-items: center;
+
+    .main-button {
+      width: 80%; // Make buttons wider on small screens
+      margin: 10px 0; // Add vertical margin between stacked buttons
+    }
+  }
+}
+
+.download-link-button {
+  text-decoration: none;
+}
+
+.greeting-text {
+  font-size: 70px;
+  line-height: 1.1;
+  color: $textColor !important;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 50px;
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 30px;
+  }
+}
+
+.greeting-text-p {
+  font-size: 30px;
+  line-height: 40px;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 14px;
+  }
+}
+
+.greeting-image-div > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wave-emoji {
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-name: wave;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

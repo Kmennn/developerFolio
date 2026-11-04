@@ -1,0 +1,19 @@
+@import "../_globalColor";
+
+.dark-mode {
+  background-color: $darkBackground;
+  color: white;
+  transition: "0.1s";
+}
+
+.main-content {
+  padding: 0 5%;
+
+  @media (max-width: $tablet-breakpoint) {
+    padding: 0 3%;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 0 2%;
+  }
+}

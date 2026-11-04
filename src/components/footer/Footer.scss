@@ -1,0 +1,33 @@
+@import "../../_globalColor";
+
+.footer-text {
+  text-align: center;
+  color: $subTitle !important;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 0.9em;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 0.8em;
+  }
+}
+
+.dark-mode {
+  color: $textColorDark !important;
+}
+
+.footer-div {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-top: 1.5rem;
+    padding-bottom: 0.8rem;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+}

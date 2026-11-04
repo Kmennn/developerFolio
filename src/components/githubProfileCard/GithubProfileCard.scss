@@ -1,0 +1,123 @@
+@import "../../_globalColor";
+
+.profile-image {
+  border-radius: 50%;
+  border: 0.5rem solid $githubProfileCardBorder;
+  margin-left: auto;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  box-shadow: $lightBoxShadow 0 30px 30px -30px;
+  transition: all 0.3s ease-out;
+
+  @media (max-width: $tablet-breakpoint) {
+    max-width: 250px;
+    border: 0.3rem solid $githubProfileCardBorder;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    max-width: 200px;
+    border: 0.2rem solid $githubProfileCardBorder;
+  }
+}
+
+.profile-image:hover {
+  box-shadow: none;
+
+  @media (max-width: $tablet-breakpoint) {
+    box-shadow: $lightBoxShadow 0 50px 50px -50px; // Keep some shadow on hover for mobile
+  }
+}
+
+.prof-title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 400;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 32px;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 28px;
+  }
+}
+
+.location-div {
+  text-shadow: $githubProfileCardLocationTS;
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 0.9em;
+  }
+}
+
+.opp-div {
+  padding-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+
+  @media (max-width: $tablet-breakpoint) {
+    flex-direction: column; // Stack elements vertically on tablets and mobile
+    align-items: center; // Center content
+  }
+}
+
+.main-content-profile {
+  flex: 80%;
+
+  @media (max-width: $tablet-breakpoint) {
+    text-align: center;
+    order: 2; // Move content below image
+  }
+}
+
+.image-content-profile {
+  text-align: right;
+  flex: 20%;
+  max-width: 100%;
+  height: auto;
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-left: auto;
+    margin-right: auto;
+    order: 1; // Move image to the top
+  }
+}
+
+.bio-text {
+  line-height: 30px;
+  font-size: 22px;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.desc-prof {
+  line-height: 45px;
+  font-size: 19px;
+
+  @media (max-width: $tablet-breakpoint) {
+    line-height: 30px;
+    font-size: 16px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.subTitle {
+  color: $subTitle;
+}

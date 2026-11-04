@@ -1,0 +1,82 @@
+@import "../../_globalColor";
+
+.education-heading {
+  font-size: 56px;
+  font-weight: 400;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 24px;
+  }
+}
+
+.education-section {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 20px 0px;
+  margin: 0px auto;
+  margin-top: 2rem;
+
+  @media (max-width: $tablet-breakpoint) {
+    width: 95%;
+    padding: 10px 0;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 98%;
+    padding: 5px 0;
+    margin-top: 1rem;
+  }
+}
+
+.education-section > * {
+  flex: 1;
+  margin-bottom: 30px;
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    margin-bottom: 15px;
+  }
+}
+
+.education-card-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+
+  @media (max-width: $tablet-breakpoint) {
+    padding-top: 10px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    padding-top: 5px;
+  }
+}
+
+.education-text-subtitle {
+  @media (max-width: $desktop-breakpoint) {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 16px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 14px;
+  }
+}

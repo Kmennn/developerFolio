@@ -1,0 +1,49 @@
+@import "../../_globalColor";
+
+.dev-icons {
+  padding-left: 0;
+  list-style: none;
+  font-size: 3rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 2rem;
+  }
+}
+
+.software-skill-inline {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.software-skill-inline > i {
+  color: $subTitle;
+}
+
+.software-skill-inline > i:hover {
+  color: $skillsColor;
+}
+.software-skill-inline > p {
+  color: $subTitle;
+  font-size: 10px;
+}
+.software-skill-inline > i:hover ~ p {
+  color: $skillsColor;
+}

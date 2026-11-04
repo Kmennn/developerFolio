@@ -1,0 +1,170 @@
+// Visual polish layer. Loaded last from App.scss so it overrides template defaults.
+// Motion rules: transform/opacity only, custom ease-out, <=220ms, hover gated
+// to real pointers, all movement removed under prefers-reduced-motion.
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --accent-1: #6d28d9;
+  --accent-2: #db2777;
+  --accent-3: #2563eb;
+  --accent-grad: linear-gradient(120deg, var(--accent-1), var(--accent-2) 55%, var(--accent-3));
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// Soft colour glow behind the hero, no layout impact
+.greet-main {
+  position: relative;
+  isolation: isolate;
+}
+.greet-main::before {
+  content: "";
+  position: absolute;
+  inset: -10% -5% auto -5%;
+  height: 520px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 50% at 20% 30%, rgba(109, 40, 217, 0.16), transparent 70%),
+    radial-gradient(35% 45% at 80% 20%, rgba(219, 39, 119, 0.12), transparent 70%),
+    radial-gradient(30% 40% at 55% 75%, rgba(37, 99, 235, 0.1), transparent 70%);
+  filter: blur(20px);
+}
+
+// Gradient on the big hero line
+.greeting-text {
+  letter-spacing: -0.02em;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Brighter stops on the dark theme so the gradient text keeps contrast
+.dark-mode.greeting-text,
+.dark-mode .greeting-text {
+  background: linear-gradient(120deg, #c4b5fd, #f9a8d4 55%, #93c5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+// Section headings: tighter tracking and a short gradient bar under them
+.skills-heading,
+.achievement-heading,
+.experience-heading,
+.project-title,
+.talk-header-title,
+.contact-title {
+  letter-spacing: -0.02em;
+}
+.skills-heading::after,
+.achievement-heading::after,
+.experience-heading::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background: var(--accent-grad);
+}
+
+// Buttons: gradient fill, exact transitions, press feedback
+.main-button {
+  background: var(--accent-grad);
+  background-size: 160% 100%;
+  background-position: 0% 50%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px -8px rgba(109, 40, 217, 0.6);
+  transition:
+    transform 160ms var(--ease-out),
+    box-shadow 200ms ease,
+    background-position 300ms ease;
+}
+.main-button:hover {
+  background: var(--accent-grad);
+  background-size: 160% 100%;
+  color: #fff;
+  transform: none;
+}
+.main-button:active {
+  transform: scale(0.97);
+}
+
+// Cards: rounder, hairline border, lift on hover
+.project-card,
+.certificate-card,
+.experience-card,
+.experience-card-dark {
+  border-radius: 16px !important;
+  border: 1px solid rgba(127, 127, 127, 0.16);
+  transition:
+    transform 200ms var(--ease-out),
+    box-shadow 200ms ease,
+    border-color 200ms ease !important;
+}
+.project-card-dark,
+.certificate-card.dark-mode {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .main-button:hover {
+    background-position: 100% 50%;
+    box-shadow: 0 10px 24px -8px rgba(219, 39, 119, 0.55);
+  }
+  .project-card:hover,
+  .certificate-card:hover,
+  .experience-card:hover,
+  .experience-card-dark:hover {
+    transform: translateY(-4px);
+    border-color: rgba(109, 40, 217, 0.45);
+    box-shadow: 0 18px 40px -18px rgba(109, 40, 217, 0.45) !important;
+  }
+}
+
+// Gentle entrance for the hero only (seen once per visit)
+@keyframes polish-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.greeting-text-div > * {
+  animation: polish-rise 500ms var(--ease-out) both;
+}
+.greeting-text-div > *:nth-child(2) {
+  animation-delay: 60ms;
+}
+.greeting-text-div > *:nth-child(3) {
+  animation-delay: 120ms;
+}
+.greeting-text-div > *:nth-child(4) {
+  animation-delay: 180ms;
+}
+
+::selection {
+  background: rgba(109, 40, 217, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .greeting-text-div > * {
+    animation: none;
+  }
+  .project-card:hover,
+  .certificate-card:hover,
+  .experience-card:hover,
+  .experience-card-dark:hover,
+  .main-button:active {
+    transform: none;
+  }
+}
